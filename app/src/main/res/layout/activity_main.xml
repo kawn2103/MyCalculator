@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/topLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/keyPadTableLayout"
+        app:layout_constraintVertical_weight="1"/>
+
+    <TextView
+        android:id="@+id/expressionTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="end"
+        android:text=""
+        android:textSize="30sp"
+        android:textColor="@color/textColor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/resultTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="end"
+        android:text=""
+        android:textSize="20sp"
+        android:textColor="@color/textColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/keyPadTableLayout"/>
+
+    <TableLayout
+        android:id="@+id/keyPadTableLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:shrinkColumns="*"
+        android:paddingTop="21dp"
+        android:paddingBottom="21dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintTop_toBottomOf="@id/topLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_weight="1.5">
+
+        <TableRow android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/clearBt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="C"
+                android:textSize="24sp"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="clearButtonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bracketBt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="()"
+                android:textSize="24sp"
+                android:textColor="@color/buttonGreen"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:enabled="false"
+                android:clickable="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/percentBt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="%"
+                android:textSize="24sp"
+                android:textColor="@color/buttonGreen"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/divisionBt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="/"
+                android:textSize="24sp"
+                android:textColor="@color/buttonGreen"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/num7Bt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="7"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/num8Bt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="8"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/num9Bt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="9"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/multiBt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="X"
+                android:textSize="24sp"
+                android:textColor="@color/buttonGreen"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/num4Bt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="4"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/num5Bt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="5"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/num6Bt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="6"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/minusBt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="-"
+                android:textSize="24sp"
+                android:textColor="@color/buttonGreen"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/num1Bt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="1"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/num2Bt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="2"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/num3Bt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="3"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/plusBt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="+"
+                android:textSize="24sp"
+                android:textColor="@color/buttonGreen"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/historyBt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text=""
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:src="@drawable/ic_baseline_access_time_24"
+                android:stateListAnimator="@null"
+                android:onClick="historyButtonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/num0Bt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="0"
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:onClick="buttonClicked"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="."
+                android:textSize="24sp"
+                android:textColor="@color/textColor"
+                android:background="@drawable/button_style"
+                android:stateListAnimator="@null"
+                android:enabled="false"
+                android:clickable="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/resultBt"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_margin="7dp"
+                android:text="="
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:background="@drawable/button_background_green"
+                android:stateListAnimator="@null"
+                android:onClick="resultButtonClicked"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/historyLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintTop_toTopOf="@id/keyPadTableLayout"
+        app:layout_constraintStart_toStartOf="@id/keyPadTableLayout"
+        app:layout_constraintEnd_toEndOf="@id/keyPadTableLayout"
+        app:layout_constraintBottom_toBottomOf="@id/keyPadTableLayout">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/colseBt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="닫기"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:stateListAnimator="@null"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="closeHistoryBtClicked"/>
+
+        <ScrollView
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/colseBt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/resetBt">
+
+            <LinearLayout
+                android:id="@+id/historyLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/resetBt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="계산기록 초기화"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:background="@color/buttonGreen"
+            android:stateListAnimator="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:onClick="resetHistoryBtClicked"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
